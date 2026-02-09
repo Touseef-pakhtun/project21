@@ -1,0 +1,360 @@
+/* ==================== CSS Variables ==================== */
+:root {
+  /* Primary Colors */
+  --color-purple-600: hsl(246, 80%, 60%);
+  --color-orange-300: hsl(15, 100%, 70%);
+  --color-blue-300: hsl(195, 74%, 62%);
+  --color-pink-400: hsl(348, 100%, 68%);
+  --color-green-400: hsl(145, 58%, 55%);
+  --color-purple-700: hsl(264, 64%, 52%);
+  --color-yellow-300: hsl(43, 84%, 65%);
+
+  /* Neutral Colors */
+  --color-navy-950: hsl(226, 43%, 10%);
+  --color-navy-900: hsl(235, 46%, 20%);
+  --color-purple-500: hsl(235, 45%, 61%);
+  --color-navy-200: hsl(236, 100%, 87%);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+  --spacing-2xl: 3rem;
+}
+
+/* ==================== Reset & Base Styles ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  background-color: var(--color-navy-950);
+  color: var(--color-navy-200);
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: var(--spacing-lg);
+}
+
+/* ==================== Main Layout ==================== */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==================== Profile Card ==================== */
+.profile-card {
+  background: linear-gradient(135deg, var(--color-navy-900) 0%, var(--color-navy-900) 100%);
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: var(--spacing-lg);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-purple-500);
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--color-navy-200);
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-label {
+  font-size: 0.875rem;
+  color: var(--color-purple-500);
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-navy-200);
+  line-height: 1.2;
+}
+
+/* ==================== Timeframe Navigation ==================== */
+.timeframe-nav {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: space-between;
+}
+
+.timeframe-btn {
+  background: none;
+  border: none;
+  color: var(--color-purple-500);
+  font-size: 1rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  padding: var(--spacing-xs) 0;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.timeframe-btn:hover {
+  color: var(--color-navy-200);
+}
+
+.timeframe-btn.active {
+  color: var(--color-navy-200);
+  font-weight: 500;
+}
+
+/* ==================== Activity Grid ==================== */
+.activity-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* ==================== Activity Card ==================== */
+.activity-card {
+  border-radius: 1rem;
+  background: var(--color-navy-900);
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  position: relative;
+}
+
+.activity-top-icon {
+  position: absolute;
+  top: -38px;
+  right: var(--spacing-md);
+  width: 35px;
+  height: 35px;
+  z-index: 10;
+  background: transparent;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.15);
+}
+
+.activity-card.work {
+  background: linear-gradient(135deg, var(--color-navy-900) 0%, var(--color-navy-900) 100%);
+  border-top: 40px solid var(--color-orange-300);
+}
+
+.activity-card.play {
+  background: linear-gradient(135deg, var(--color-navy-900) 0%, var(--color-navy-900) 100%);
+  border-top: 40px solid var(--color-blue-300);
+}
+
+.activity-card.study {
+  background: linear-gradient(135deg, var(--color-navy-900) 0%, var(--color-navy-900) 100%);
+  border-top: 40px solid var(--color-pink-400);
+}
+
+.activity-card.exercise {
+  background: linear-gradient(135deg, var(--color-navy-900) 0%, var(--color-navy-900) 100%);
+  border-top: 40px solid var(--color-green-400);
+}
+
+.activity-card.social {
+  background: linear-gradient(135deg, var(--color-navy-900) 0%, var(--color-navy-900) 100%);
+  border-top: 40px solid var(--color-purple-700);
+}
+
+.activity-card.self-care {
+  background: linear-gradient(135deg, var(--color-navy-900) 0%, var(--color-navy-900) 100%);
+  border-top: 40px solid var(--color-yellow-300);
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm) var(--spacing-md);
+}
+
+.activity-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-navy-200);
+}
+
+.activity-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.activity-content {
+  padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+}
+
+.activity-current {
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--color-navy-200);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1;
+}
+
+.activity-previous {
+  font-size: 0.875rem;
+  color: var(--color-purple-500);
+  font-weight: 400;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (min-width: 600px) {
+  .activity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body {
+    padding: var(--spacing-xl);
+  }
+
+  .dashboard {
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl);
+  }
+
+  .profile-card {
+    padding-bottom: var(--spacing-2xl);
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: none;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: 0;
+  }
+
+  .profile-image {
+    width: 96px;
+    height: 96px;
+  }
+
+  .profile-name {
+    font-size: 2.5rem;
+  }
+
+  .timeframe-nav {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-2xl);
+    max-width: 1300px;
+    padding: var(--spacing-2xl);
+  }
+
+  .activity-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    padding: var(--spacing-xl);
+  }
+
+  .profile-header {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-name {
+    font-size: 2rem;
+  }
+
+  .timeframe-nav {
+    gap: var(--spacing-sm);
+  }
+
+  .timeframe-btn {
+    font-size: 0.95rem;
+  }
+}
+
+/* ==================== Accessibility ==================== */
+.timeframe-btn:focus {
+  outline: 2px solid var(--color-purple-600);
+  outline-offset: 2px;
+}
+
+.activity-card:focus-within {
+  outline: 2px solid var(--color-purple-600);
+  outline-offset: 2px;
+}
+
+/* ==================== Attribution ==================== */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+  color: var(--color-purple-500);
+}
+
+.attribution a {
+  color: var(--color-purple-600);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.attribution a:hover {
+  color: var(--color-navy-200);
+  text-decoration: underline;
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+  body {
+    padding: 0;
+  }
+
+  .dashboard {
+    padding: 0;
+  }
+
+  .attribution {
+    margin-top: var(--spacing-lg);
+  }
+}
